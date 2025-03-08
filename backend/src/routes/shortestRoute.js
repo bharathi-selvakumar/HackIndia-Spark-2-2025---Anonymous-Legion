@@ -51,16 +51,14 @@ router.get("/", async (req, res) => {
     }
 
     try {
-        // 🔹 Fetch real flight routes from the AviationStack API
-        const response = await axios.get(`${aviationStackApiUrl}/routes`, {
+         const response = await axios.get(`${aviationStackApiUrl}/routes`, {
             params: {
                 access_key: apiKeys.aviationStack,
                 dep_iata: origin,
             }
         });
 
-        // 🔹 Construct the flightGraph dynamically
-        const flightGraph = {};
+         const flightGraph = {};
         response.data.data.forEach(route => {
             if (!flightGraph[route.departure_iata]) {
                 flightGraph[route.departure_iata] = {};
@@ -68,8 +66,7 @@ router.get("/", async (req, res) => {
             flightGraph[route.departure_iata][route.arrival_iata] = route.distance;
         });
 
-        // 🔹 Find the shortest path
-        const shortestPath = dijkstra(flightGraph, origin, destination);
+         const shortestPath = dijkstra(flightGraph, origin, destination);
         res.json({ origin, destination, path: shortestPath });
 
     } catch (error) {

@@ -20,7 +20,7 @@ function dijkstra(graph, start, end) {
             }
         }
     }
-    return { path: [], distance: Infinity }; // Ensure `path` is always an array
+    return { path: [], distance: Infinity }; 
 }
 
 module.exports = { dijkstra };

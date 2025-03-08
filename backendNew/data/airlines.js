@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-// Mock airline data
-const airlines = {
+ const airlines = {
     "AA": { name: "American Airlines", country: "USA", iata: "AA" },
     "DL": { name: "Delta Airlines", country: "USA", iata: "DL" },
     "UA": { name: "United Airlines", country: "USA", iata: "UA" },

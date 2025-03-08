@@ -2,12 +2,12 @@ const express = require("express");
 const app = express();
 const port = 5757;
 
-// Middleware
+ 
 app.use(express.json());
 const cors = require("cors");
-app.use(cors()); // Enable CORS for all routes
+app.use(cors());  
 
-// Routes
+ 
 app.use("/airlines", require("../data/airlines"));
 app.use("/distance", require("../data/distance"));
 app.use("/flights", require("../data/flights"));

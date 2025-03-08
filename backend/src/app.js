@@ -11,18 +11,15 @@ const setupWebSocket = require('./websocket');
 const app = express();
 const server = http.createServer(app);
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Routes
 app.use('/api/flights', flightsRoutes);
 app.use('/api/history', historyRoutes);
 app.use('/api/distance', distanceRoutes);
 app.use('/api/airlines', airlinesRoutes);
 app.use('/api/shortestRoute', shortestRouteRoutes);
 
-// Initialize WebSocket
 setupWebSocket(server);
 
 const PORT = process.env.PORT || 5000;

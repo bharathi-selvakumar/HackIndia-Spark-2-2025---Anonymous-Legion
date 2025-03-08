@@ -2,8 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const router = express.Router();
 
-// Flight tracking API using OpenSky Network
-router.get("/", async (req, res) => {
+ router.get("/", async (req, res) => {
     const { icao24 } = req.query;
 
     if (!icao24) {

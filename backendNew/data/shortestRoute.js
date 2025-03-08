@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
         return res.status(400).json({ error: "Invalid origin or destination" });
     }
 
-    // Run Dijkstra's Algorithm to find the shortest route
+     
     const routes = dijkstra(flightGraph, origin, destination);
 
     if (!routes || routes.length === 0) {

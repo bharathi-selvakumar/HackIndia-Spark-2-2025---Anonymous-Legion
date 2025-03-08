@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-// Mock distances (in km)
+ 
 const distances = {
     "New York (JFK) - Los Angeles (LAX)": 3975,
     "New York (JFK) - Chicago (ORD)": 1187,
